@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 const instagramUrl =
   "https://www.instagram.com/1ofone.us?igsh=eWtycml4MHJmeHZr&utm_source=qr";
