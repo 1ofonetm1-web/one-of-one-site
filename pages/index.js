@@ -9,7 +9,7 @@ const products = [
     id: 1,
     name: "UNREPEATABLE Hoodie",
     price: 120,
-    image: "/hoodie.jpg",
+    image: "/unrepeatable-hoodie-new.jpg",
     story:
       "The UNREPEATABLE Hoodie is the first statement piece from ONE OF ONE. Built as the face of the brand, it represents individuality, pressure, and the idea that real identity can’t be copied.",
   },
@@ -60,9 +60,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div style={{ background: "black", color: "white", fontFamily: "Arial" }}>
-        
-        {/* HERO */}
+      <div
+        style={{
+          background: "black",
+          color: "white",
+          fontFamily: "Arial",
+          minHeight: "100vh",
+        }}
+      >
         <section
           style={{
             minHeight: "100vh",
@@ -74,16 +79,36 @@ export default function Home() {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+            padding: "40px 20px",
           }}
         >
           <div>
-            <h1 style={{ fontSize: "3rem" }}>ONE OF ONE</h1>
-            <p>UNREPEATABLE • LIMITED DROPS • MADE IN NYC</p>
+            <h1
+              style={{
+                fontSize: "3rem",
+                marginBottom: "10px",
+                letterSpacing: "2px",
+              }}
+            >
+              ONE OF ONE
+            </h1>
+
+            <p
+              style={{
+                fontSize: "15px",
+                letterSpacing: "2px",
+                marginBottom: "25px",
+              }}
+            >
+              UNREPEATABLE • LIMITED DROPS • MADE IN NYC
+            </p>
 
             <div style={{ marginTop: "20px" }}>
               <button
                 onClick={() =>
-                  document.getElementById("shop").scrollIntoView()
+                  document.getElementById("shop").scrollIntoView({
+                    behavior: "smooth",
+                  })
                 }
                 style={{
                   padding: "12px 20px",
@@ -92,6 +117,8 @@ export default function Home() {
                   color: "white",
                   marginRight: "10px",
                   cursor: "pointer",
+                  borderRadius: "8px",
+                  fontWeight: "bold",
                 }}
               >
                 Shop Now
@@ -100,11 +127,14 @@ export default function Home() {
               <a
                 href={instagramUrl}
                 target="_blank"
+                rel="noreferrer"
                 style={{
                   padding: "12px 20px",
                   border: "1px solid white",
                   color: "white",
                   textDecoration: "none",
+                  borderRadius: "8px",
+                  fontWeight: "bold",
                 }}
               >
                 Instagram
@@ -113,15 +143,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SHOP */}
-        <section id="shop" style={{ padding: "40px" }}>
-          <h2>Collection</h2>
+        <section
+          id="shop"
+          style={{
+            padding: "50px 30px",
+            maxWidth: "1400px",
+            margin: "0 auto",
+          }}
+        >
+          <h2 style={{ marginBottom: "25px", fontSize: "2rem" }}>Collection</h2>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "20px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "25px",
             }}
           >
             {products.map((product) => (
@@ -129,71 +165,12 @@ export default function Home() {
                 key={product.id}
                 style={{
                   background: "#111",
-                  padding: "15px",
-                  borderRadius: "10px",
+                  padding: "18px",
+                  borderRadius: "12px",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
                 }}
               >
-                <h3>{product.name}</h3>
+                <h3 style={{ marginBottom: "15px" }}>{product.name}</h3>
 
-                <img src={product.image} width="100%" />
-
-                {/* DESCRIPTION UNDER */}
-                <p style={{ marginTop: "10px", fontSize: "14px" }}>
-                  {product.story}
-                </p>
-
-                <select
-                  onChange={(e) =>
-                    setSizesSelected({
-                      ...sizesSelected,
-                      [product.id]: e.target.value,
-                    })
-                  }
-                  style={{ marginTop: "10px", width: "100%" }}
-                >
-                  <option value="">Select Size</option>
-                  {sizes.map((size) => (
-                    <option key={size}>{size}</option>
-                  ))}
-                </select>
-
-                <button
-                  onClick={() => addToCart(product)}
-                  style={{
-                    marginTop: "10px",
-                    width: "100%",
-                    padding: "10px",
-                    background: "#ff3b30",
-                    border: "none",
-                    color: "white",
-                    cursor: "pointer",
-                  }}
-                >
-                  Add to Cart
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* CART */}
-        <section style={{ padding: "40px", background: "#111" }}>
-          <h2>Cart</h2>
-
-          {cart.length === 0 ? (
-            <p>Cart is empty</p>
-          ) : (
-            <>
-              {cart.map((item, index) => (
-                <p key={index}>
-                  {item.name} - {item.size}
-                </p>
-              ))}
-              <h3>Total: ${total}</h3>
-            </>
-          )}
-        </section>
-      </div>
-    </>
-  );
-}
+                <img
+                  src
