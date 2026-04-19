@@ -11,7 +11,7 @@ const products = [
     price: 120,
     image: "/unrepeatable-hoodie-new.jpg",
     story:
-      "The UNREPEATABLE Hoodie is the first statement piece from ONE OF ONE. Built as the face of the brand, it represents individuality, pressure, and the idea that real identity can’t be copied.",
+      "The Unrepeatable Hoodie is the first statement piece from One of One. Built as the face of the brand, it represents individuality, pressure, and identity that cannot be replicated.",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const products = [
     price: 60,
     image: "/trust.jpg",
     story:
-      "Trust The Process is about discipline, growth, and staying grounded while building something bigger than the moment you're in.",
+      "Trust the Process reflects discipline, patience, and belief. It represents staying grounded while building something bigger than the moment you are in.",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const products = [
     price: 60,
     image: "/resilience.jpg",
     story:
-      "Resilience represents strength through struggle and identity built through experience. Every challenge becomes part of the story.",
+      "Resilience represents strength through struggle. Every challenge becomes part of the story, shaping identity and creating something real.",
   },
 ];
 
@@ -60,9 +60,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div style={{ background: "black", color: "white", fontFamily: "Arial" }}>
-        
-        {/* HERO */}
+      <div
+        style={{
+          background: "black",
+          color: "white",
+          fontFamily: "Arial, sans-serif",
+          minHeight: "100vh",
+        }}
+      >
         <section
           style={{
             minHeight: "100vh",
@@ -74,11 +79,29 @@ export default function Home() {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+            padding: "40px 20px",
           }}
         >
           <div>
-            <h1 style={{ fontSize: "3rem" }}>ONE OF ONE</h1>
-            <p>UNREPEATABLE • LIMITED DROPS • MADE IN NYC</p>
+            <h1
+              style={{
+                fontSize: "3rem",
+                marginBottom: "10px",
+                letterSpacing: "2px",
+              }}
+            >
+              ONE OF ONE
+            </h1>
+
+            <p
+              style={{
+                fontSize: "15px",
+                letterSpacing: "2px",
+                marginBottom: "25px",
+              }}
+            >
+              UNREPEATABLE • LIMITED DROPS • MADE IN NYC
+            </p>
 
             <div style={{ marginTop: "20px" }}>
               <button
@@ -92,6 +115,8 @@ export default function Home() {
                   color: "white",
                   marginRight: "10px",
                   cursor: "pointer",
+                  borderRadius: "8px",
+                  fontWeight: "bold",
                 }}
               >
                 Shop Now
@@ -100,11 +125,14 @@ export default function Home() {
               <a
                 href={instagramUrl}
                 target="_blank"
+                rel="noreferrer"
                 style={{
                   padding: "12px 20px",
                   border: "1px solid white",
                   color: "white",
                   textDecoration: "none",
+                  borderRadius: "8px",
+                  fontWeight: "bold",
                 }}
               >
                 Instagram
@@ -113,9 +141,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SHOP */}
         <section id="shop" style={{ padding: "40px" }}>
-          <h2>Collection</h2>
+          <h2
+            style={{
+              fontSize: "2rem",
+              marginBottom: "25px",
+              letterSpacing: "1px",
+            }}
+          >
+            Collection
+          </h2>
 
           <div
             style={{
@@ -129,16 +164,44 @@ export default function Home() {
                 key={product.id}
                 style={{
                   background: "#111",
-                  padding: "15px",
-                  borderRadius: "10px",
+                  padding: "18px",
+                  borderRadius: "12px",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
                 }}
               >
-                <h3>{product.name}</h3>
+                <h3
+                  style={{
+                    marginBottom: "15px",
+                    fontSize: "1.4rem",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  {product.name}
+                </h3>
 
-                <img src={product.image} width="100%" />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{
+                    width: "100%",
+                    borderRadius: "12px",
+                    marginBottom: "12px",
+                    display: "block",
+                  }}
+                />
 
-                {/* DESCRIPTION */}
-                <p style={{ marginTop: "10px", fontSize: "14px" }}>
+                <p
+                  style={{
+                    marginTop: "12px",
+                    marginBottom: "16px",
+                    fontSize: "14px",
+                    lineHeight: "1.7",
+                    color: "#cfcfcf",
+                    letterSpacing: "0.3px",
+                    fontFamily: "'Times New Roman', serif",
+                    fontStyle: "italic",
+                  }}
+                >
                   {product.story}
                 </p>
 
@@ -149,7 +212,16 @@ export default function Home() {
                       [product.id]: e.target.value,
                     })
                   }
-                  style={{ marginTop: "10px", width: "100%" }}
+                  defaultValue=""
+                  style={{
+                    marginTop: "10px",
+                    width: "100%",
+                    padding: "10px",
+                    borderRadius: "8px",
+                    background: "#0f0f0f",
+                    color: "white",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
                 >
                   <option value="">Select Size</option>
                   {sizes.map((size) => (
@@ -167,6 +239,8 @@ export default function Home() {
                     border: "none",
                     color: "white",
                     cursor: "pointer",
+                    borderRadius: "8px",
+                    fontWeight: "bold",
                   }}
                 >
                   Add to Cart
@@ -176,20 +250,40 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CART */}
         <section style={{ padding: "40px", background: "#111" }}>
-          <h2>Cart</h2>
+          <h2
+            style={{
+              fontSize: "1.8rem",
+              marginBottom: "18px",
+              letterSpacing: "1px",
+            }}
+          >
+            Cart
+          </h2>
 
           {cart.length === 0 ? (
-            <p>Cart is empty</p>
+            <p style={{ color: "#cfcfcf" }}>Cart is empty</p>
           ) : (
             <>
               {cart.map((item, index) => (
-                <p key={index}>
-                  {item.name} - {item.size}
-                </p>
+                <div
+                  key={index}
+                  style={{
+                    marginBottom: "12px",
+                    paddingBottom: "12px",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  }}
+                >
+                  <p style={{ margin: 0, fontWeight: "bold" }}>
+                    {item.name}
+                  </p>
+                  <p style={{ margin: "4px 0 0", color: "#cfcfcf" }}>
+                    Size: {item.size}
+                  </p>
+                </div>
               ))}
-              <h3>Total: ${total}</h3>
+
+              <h3 style={{ marginTop: "20px" }}>Total: ${total}</h3>
             </>
           )}
         </section>
