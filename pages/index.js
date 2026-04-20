@@ -15,54 +15,6 @@ const products = [
   },
   {
     id: 2,
-    name: "ONE OF ONE Sweatsuit Set – Dark Gray",
-    price: 100,
-    image: "/oneofone-sweatsuit-darkgray.jpg",
-    story:
-      "The full One of One sweatsuit in Dark Gray. Designed to be worn together, not copied. Built for presence, individuality, and those who stand alone. Limited release. Save $20 when you buy the full set.",
-  },
-  {
-    id: 3,
-    name: "ONE OF ONE Sweatsuit Set – Light Gray",
-    price: 100,
-    image: "/oneofone-sweatsuit-lightgray.jpg",
-    story:
-      "The full One of One sweatsuit in Light Gray. Designed to be worn together, not copied. Built for presence, individuality, and those who stand alone. Limited release. Save $20 when you buy the full set.",
-  },
-  {
-    id: 4,
-    name: "ONE OF ONE Hoodie – Dark Gray",
-    price: 60,
-    image: "/oneofone-hoodie-darkgray.jpg",
-    story:
-      "The Dark Gray hoodie from the One of One collection. Clean, bold, and built to stand out without forcing it. Wear it alone or complete the full sweatsuit.",
-  },
-  {
-    id: 5,
-    name: "ONE OF ONE Hoodie – Light Gray",
-    price: 60,
-    image: "/oneofone-hoodie-lightgray.jpg",
-    story:
-      "The Light Gray hoodie from the One of One collection. Clean, bold, and built to stand out without forcing it. Wear it alone or complete the full sweatsuit.",
-  },
-  {
-    id: 6,
-    name: "ONE OF ONE Sweatpants – Dark Gray",
-    price: 60,
-    image: "/oneofone-pants-darkgray.jpg",
-    story:
-      "Clean. Minimal. Intentional. Designed to move with you while keeping the message clear — You are One of One. Pair it with the hoodie or stand on its own.",
-  },
-  {
-    id: 7,
-    name: "ONE OF ONE Sweatpants – Light Gray",
-    price: 60,
-    image: "/oneofone-pants-lightgray.jpg",
-    story:
-      "Clean. Minimal. Intentional. Designed to move with you while keeping the message clear — You are One of One. Pair it with the hoodie or stand on its own.",
-  },
-  {
-    id: 8,
     name: "Trust The Process Tee",
     price: 60,
     image: "/trust.jpg",
@@ -70,12 +22,60 @@ const products = [
       "Built in pressure. No shortcuts. Trust the process.",
   },
   {
-    id: 9,
+    id: 3,
     name: "Resilience Tee",
     price: 60,
     image: "/resilience.jpg",
     story:
       "Resilience is earned. Not given. Built through pressure.",
+  },
+  {
+    id: 4,
+    name: "ONE OF ONE Sweatsuit Set – Dark Gray",
+    price: 100,
+    image: "/oneofone-sweatsuit-darkgray.jpg",
+    story:
+      "The full One of One sweatsuit in Dark Gray. Designed to be worn together, not copied. Built for presence, individuality, and those who stand alone. Limited release. Save $20 when you buy the full set.",
+  },
+  {
+    id: 5,
+    name: "ONE OF ONE Sweatsuit Set – Light Gray",
+    price: 100,
+    image: "/oneofone-sweatsuit-lightgray.jpg",
+    story:
+      "The full One of One sweatsuit in Light Gray. Designed to be worn together, not copied. Built for presence, individuality, and those who stand alone. Limited release. Save $20 when you buy the full set.",
+  },
+  {
+    id: 6,
+    name: "ONE OF ONE Hoodie – Dark Gray",
+    price: 60,
+    image: "/oneofone-hoodie-darkgray.jpg",
+    story:
+      "The Dark Gray hoodie from the One of One collection. Clean, bold, and built to stand out without forcing it. Wear it alone or complete the full sweatsuit.",
+  },
+  {
+    id: 7,
+    name: "ONE OF ONE Hoodie – Light Gray",
+    price: 60,
+    image: "/oneofone-hoodie-lightgray.jpg",
+    story:
+      "The Light Gray hoodie from the One of One collection. Clean, bold, and built to stand out without forcing it. Wear it alone or complete the full sweatsuit.",
+  },
+  {
+    id: 8,
+    name: "ONE OF ONE Sweatpants – Dark Gray",
+    price: 60,
+    image: "/oneofone-pants-darkgray.jpg",
+    story:
+      "Clean. Minimal. Intentional. Designed to move with you while keeping the message clear — You are One of One. Pair it with the hoodie or stand on its own.",
+  },
+  {
+    id: 9,
+    name: "ONE OF ONE Sweatpants – Light Gray",
+    price: 60,
+    image: "/oneofone-pants-lightgray.jpg",
+    story:
+      "Clean. Minimal. Intentional. Designed to move with you while keeping the message clear — You are One of One. Pair it with the hoodie or stand on its own.",
   },
 ];
 
